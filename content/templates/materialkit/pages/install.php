@@ -133,7 +133,8 @@
                             
                                             <div style="margin-bottom: 25px" class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-folder-open"></i></span>
-                                                <input type="email" class="form-control" name="siteemail" placeholder="Site Email (eg. noreply@igportals.eu)">
+                                                <input type="email" class="form-control" name="
+						" placeholder="Site Email (eg. noreply@igportals.eu)">
                                             </div>
                                     ';
                                     $fp=fopen('../../../config/settings.php','w');
@@ -148,7 +149,7 @@
                                     define("DIR","'.$_POST["siteurl1"].'");
                                     define("SITEEMAIL","'.$_POST["siteemail"].'");
                                     
-                                    $siteemail = "'.$_POST["siteemail"].'";
+                                    $siteemail = "".SITEEMAIL."";
                                     $siteurl = "".DIR."/";
                                     
                                     class Connect extends PDO
