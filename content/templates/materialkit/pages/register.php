@@ -84,8 +84,13 @@
 													//hash the password
 													$hashedpassword = $user->password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-													//create the activasion code
-													$activasion = md5(uniqid(rand(),true));
+													if(empty($siteemail)){
+														$activasion = 'Yes';
+													} 
+													else {
+														$activasion = md5(uniqid(rand(),true));
+													}
+													
 
 													$date = time();
 
