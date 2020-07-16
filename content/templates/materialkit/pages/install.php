@@ -132,11 +132,6 @@
                                             </div>
                             
                                             <div style="margin-bottom: 25px" class="input-group">
-                                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                                <input type="text" class="form-control" name="siteurl2" value="" placeholder="Site URL (eg. http://igportals.eu/)">                                        
-                                            </div>
-                            
-                                            <div style="margin-bottom: 25px" class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-folder-open"></i></span>
                                                 <input type="email" class="form-control" name="siteemail" placeholder="Site Email (eg. noreply@igportals.eu)">
                                             </div>
@@ -154,7 +149,7 @@
                                     define("SITEEMAIL","'.$_POST["siteemail"].'");
                                     
                                     $siteemail = "'.$_POST["siteemail"].'";
-                                    $siteurl = "'.$_POST["siteurl2"].'";
+                                    $siteurl = "".DIR."/";
                                     
                                     class Connect extends PDO
                                     {
