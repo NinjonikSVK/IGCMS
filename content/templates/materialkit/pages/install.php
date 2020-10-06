@@ -1,14 +1,20 @@
 <?php
-    $step = $_GET["step"];
 
-    $action = $_GET["action"];
-    if($action == 'badcredentials'){
+	if(!empty($_GET["step"])){
+		$step = $_GET["step"];
+	}
+	
+	if(!empty($_GET["action"])){
+		$action = $_GET["action"];
+		
+		if($action == 'badcredentials'){
         echo '
         <div class="alert alert-danger" role="alert">
             The credentials which you have entered are not correct. Please enter correct credentials for your database.
         </div>
         ';
     }
+	}
 
 
 ?>
@@ -134,56 +140,58 @@
                                             <div style="margin-bottom: 25px" class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-folder-open"></i></span>
                                                 <input type="email" class="form-control" name="
-						" placeholder="Site Email (eg. noreply@igportals.eu)">
+						" placeholder="Site Email (eg. noreply@igportals.eu)*">
                                             </div>
+											* Leave empty if you dont have configured phpmailer.
                                     ';
-                                    $fp=fopen('../../../config/settings.php','w');
-                                    fwrite($fp, '
-                                    <?php
-                                    define("DBHOST", "'.$_GET["host"].'");
-                                    define("DBUSER", "'.$_GET["user"].'");
-                                    define("DBPASS", "'.$_GET["pass"].'");
-                                    define("DBNAME", "'.$_GET["db"].'");
-                                    
-                                    //application address
-                                    define("DIR","'.$_POST["siteurl1"].'");
-                                    define("SITEEMAIL","'.$_POST["siteemail"].'");
-                                    
-                                    $siteemail = "".SITEEMAIL."";
-                                    $siteurl = "".DIR."/";
-                                    
-                                    class Connect extends PDO
-                                    {
-                                        public function construct()
-                                        {
-                                            try {
-                                    
-                                                //create PDO connection
-                                                $db = new PDO("mysql:host=".DBHOST.";charset=utf8mb4;dbname=".DBNAME, DBUSER, DBPASS);
-                                                //$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);//Suggested to uncomment on production websites
-                                                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//Suggested to comment on production websites
-                                                $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-                                    
-                                            } catch(PDOException $e) {
-                                                //show error
-                                                echo "<p>".$e->getMessage()."</p>";
-                                                exit;
-                                            }
-                                    
-                                        }
-                                    
-                                    }
-                                    
-                                    ?>
-                                    
-                                    ');
-                                    fclose($fp);
 
                                     if(isset($_POST["submit"])){
 
                                         $sname = $_POST["sitename"];
                                         $sslogan = $_POST["siteslogan"];
-
+										
+										$fp=fopen('../../../config/settings.php','w');
+										fwrite($fp, '
+										<?php
+										define("DBHOST", "'.$_GET["host"].'");
+										define("DBUSER", "'.$_GET["user"].'");
+										define("DBPASS", "'.$_GET["pass"].'");
+										define("DBNAME", "'.$_GET["db"].'");
+										
+										//application address
+										define("DIR","'.$_POST["siteurl1"].'");
+										define("SITEEMAIL","'.$_POST["siteemail"].'");
+										
+										$siteemail = "".SITEEMAIL."";
+										$siteurl = "".DIR."/";
+										
+										class Connect extends PDO
+										{
+											public function construct()
+											{
+												try {
+										
+													//create PDO connection
+													$db = new PDO("mysql:host=".DBHOST.";charset=utf8mb4;dbname=".DBNAME, DBUSER, DBPASS);
+													//$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);//Suggested to uncomment on production websites
+													$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//Suggested to comment on production websites
+													$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+										
+												} catch(PDOException $e) {
+													//show error
+													echo "<p>".$e->getMessage()."</p>";
+													exit;
+												}
+										
+											}
+										
+										}
+										
+										?>
+										
+										');
+										fclose($fp);
+										
                                         header("Location: install.php?step=3&name=".$sname."&slogan=".$sslogan."");
                                     }
                                 } else if ($step == '3'){
@@ -271,7 +279,7 @@
                                         if(!isset($error)){
 
                                             //hash the password
-                                            $hashedpassword = $user->password_hash($_POST['password'], PASSWORD_BCRYPT);
+                                            $hashedpassword = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
                                             //create the activasion code
                                             $activasion = md5(uniqid(rand(),true));
@@ -309,9 +317,23 @@
 												$fp=fopen('../../../../index.php','w');
 												fwrite($fp, '
 													
-													<?php
-														header("Location: content/templates/materialkit/pages/index");
+													<?php 
+
+													require_once("content/config/config.php");
+													
+													$sid = 1;
+													
+													$stmt = $db->prepare("SELECT template FROM settings WHERE siteID=:siteID");
+													$stmt->execute(array(":siteID" => $sid));
+													$row = $stmt->fetch(PDO::FETCH_ASSOC);
+													
+													$tpl = $row["template"];
+
+													header("Location: content/templates/".$tpl."/pages/index");
+													
 													?>
+													
+												
 													
 												');
 												fclose($fp);

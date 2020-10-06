@@ -43,12 +43,12 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<th class="text-center">#</th>
+						<th>#</th>
 						<th><?php echo $dbd["created"] ?></th>
 						<th><?php echo $dbd["title"] ?></th>
 						<th><?php echo $dbd["preferated_administrator"] ?></th>
-						<th class="text-right"><?php echo $dbd["status"] ?></th>
-						<th class="text-right"><?php echo $dbd["actions"] ?></th>
+						<th><?php echo $dbd["status"] ?></th>
+						<th><?php echo $dbd["actions"] ?></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -76,18 +76,18 @@
 
 				echo '
 						<tr>';
-							echo '<td class="text-center">'.$row["ticketID"].'</td>';
+							echo '<td>'.$row["ticketID"].'</td>';
 							echo '<td>'.$date.'</td>';
 							echo '<td>'.$row["ticketTitle"].'</td>';
 							echo '<td>'.$row["ticketAdmin"].'</td>';
 							echo '<td>'.$status.'</td>';
-							echo '<td class="td-actions text-right">';
-							echo '<a href="viewticket.php?id='.$row["ticketID"].'">';
+							echo '<td class="td-actions">';
+							echo '<a href="viewticket?id='.$row["ticketID"].'">';
 							echo'<button type="button" rel="tooltip" class="btn btn-success">
 									<i class="material-icons">edit</i>
 								</button>
 								</a>';
-							echo '<a href="action.php?id='.$row["ticketID"].'&action=deletet">';
+							echo '<a href="action?id='.$row["ticketID"].'&action=deletet">';
 							echo '<button type="button" rel="tooltip" class="btn btn-danger">
 									<i class="material-icons">close</i>
 								</button>

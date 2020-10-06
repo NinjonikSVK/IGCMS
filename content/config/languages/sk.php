@@ -1,7 +1,23 @@
 <?php
 
 $l = array();
-
+$l["theme"] = "Štýl";
+$l["notdel"] = "Zmazať všetky notifikácie.";
+$l["not1"] = "Boli ste úspešne prihlásení.";
+$l["not2"] = "Úspešne ste sa odhlásili.";
+$l["not3"] = "Akcia bola úspešná.";
+$l["not4"] = "Akcia nebola úspešná.";
+$l["not5"] = "Ticket bol úspešne vytvorený.";
+$l["not6"] = "Ticket bol úspešne zmazaný.";
+$l["not7"] = "Úspešne ste olajkovali príspevok.";
+$l["not8"] = "Úspešne ste odlajkovali príspevok.";
+$l["not9"] = "Žiadna notifikácia nebola nájdená.";
+$l["notification"] = "Notifikácia";
+$l["post"] = "Príspevok";
+$l["subject"] = "Predmet";
+$l["citate"] = "Citovať";
+$l["topic_name"] = "Názov topicu";
+$l["topiclocked"] = 'Tento topic je uzamknutý, tým pádom naň nemôžete reagovať.';
 $l['login'] = 'Prihlásiť sa';
 $l['register'] = 'Zaregistrovať sa';
 $l['registerpage'] = 'Registrovať';
@@ -85,6 +101,7 @@ $stp['Four'] = $stp['stp']." Štvrtý";
 
 #dbd = Dashboard
 $dbd = array();
+$dbd["download"] = "Stiahnuť";
 $dbd["main"] = "Panel";
 $dbd["sites"] = "Stránky";
 $dbd["create_site"] = "Pridať stránku";
@@ -195,6 +212,10 @@ $actions["upload"] = "Nahrať";
 $actions["save"] = "Uložiť";
 $actions["change"] = "Zmeniť";
 $actions["confirm_password"] = "Potvrdiť heslo";
+$actions["close"] = "Uzavrieť";
+$actions["open"] = "Otvoriť";
+$actions["mark"] = "Zvýrazniť";
+$actions["unmark"] = "Odzvýrazniť";
 
 $statuses = array();
 $statuses["opened"] = "Otvorený";
@@ -211,7 +232,7 @@ $mk["404"] = "Stránka nebola nájdená!";
 $mk["account_cant_activate"] = "Váš účet nemôže byť aktivovaný..";
 $mk["support-tickets"] = "Podpora - Tickety";
 $mk["support-create-ticket"] = "Podpora - Vytvoriť ticket";
-$mk["ticket_name"] = "Názov tickety";
+$mk["ticket_name"] = "Názov ticketu";
 $mk["ticket_index"] = "Obsah ticketu";
 $mk["if_not_preferred"] = "* Ak nemáte preferovaného administrátora, tak toto políčko preskočte.";
 $mk["news_found_here"] = "Tu nájdete novinky z celého";
@@ -241,7 +262,7 @@ Upozornenie: Po zmenení avataru na 'Nahrať súbor'<br /> musíte nahrať obrá
 							Profilové fotky musia mať aspoň 100 x 100 px a byť v pomeru 1:1.
 ";
 $mk["bg_alert"] = "
-							Fotka na pozadí musí mať aspoň 2000 x 1339 px.
+							Fotka na pozadí musí mať aspoň
 ";
 
 #edt = edit

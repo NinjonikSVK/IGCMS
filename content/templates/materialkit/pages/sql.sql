@@ -220,15 +220,16 @@ CREATE TABLE `settings` (
   `siteOwner` text,
   `slogan` text,
   `ip` text,
-  `port` int(11) DEFAULT NULL
+  `port` int(11) DEFAULT NULL,
+  `template` text
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Sťahujem dáta pre tabuľku `settings`
 --
 
-INSERT INTO `settings` (`siteID`, `siteTitle`, `isRoot`, `siteOwner`, `slogan`, `ip`, `port`) VALUES
-(1, 'IGPortals.eu', 1, 'NinjonikSVK', 'Innovation Gaming Portals', 'play.igportals.eu', 25565);
+INSERT INTO `settings` (`siteID`, `siteTitle`, `isRoot`, `siteOwner`, `slogan`, `ip`, `port`, `template`) VALUES
+(1, 'IGPortals.eu', 1, 'NinjonikSVK', 'Innovation Gaming Portals', 'play.igportals.eu', 25565,  'materialkit');
 
 -- --------------------------------------------------------
 

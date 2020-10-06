@@ -39,6 +39,7 @@ if (isset($_POST['submit'])) {
 						$stmt->execute(array(
 							':bg' => $newfilename
 						));
+			header("Location: profile.php?id=".$_SESSION['memberID']."");
 		} else {
 				header("Location: editprofile?action=invalidresolution&width=".$widthbg."&height=".$heightbg."");
 		}
@@ -91,7 +92,7 @@ if (isset($_POST['submit'])) {
 								</div>
 								<button name="submit" value="submit" class="btn btn-primary btn-round"><?php echo $actions["upload"]; ?></button>
 							</div>
-							<p><?php echo $mk["bg_alert"]; ?></p>
+							<p><?php echo $mk["bg_alert"]; ?> 2000 x 1339 px.</p>
 						</div>
 					</form>
 				</div>

@@ -34,7 +34,6 @@ if(isset($_POST['submit'])){
 			$stmt = $db->prepare('UPDATE members SET username=:username, description=:description, location=:location, skills=:skills, notes=:notes WHERE username="'.$_SESSION['username'].'"');
 			$stmt->execute(array(
 				':username' => $username,
-				':ign' => $ign,
 				':description' => $description,
 				':location' => $location,
 				':skills' => $skills,
@@ -61,13 +60,13 @@ if (isset($_POST['submitav'])) {
 				$stmt->execute(array(
 					':avatar' => 'gravatar'
 				));
-				header ("Location: editprofile");
+				header ("Location: editprofile?action=avatartypeedited");
 			} else {
 				$stmt = $db->prepare('UPDATE members SET avatar=:avatar WHERE username="'.$_SESSION['username'].'"');
 				$stmt->execute(array(
 					':avatar' => 'temporary'
 				));
-				header ("Location: editprofile");
+				header ("Location: editprofile?action=avatartypeedited");
 			}
 		}
 }
@@ -111,6 +110,7 @@ if (isset($_POST['submita'])) {
 						$stmt->execute(array(
 							':avatar' => $newfilename
 						));
+				header("Location: editprofile.php?action=profileedited");
 			} else {
 				header("Location: editprofile?action=invalidresolution&width=".$width."&height=".$height."");
 			}

@@ -19,15 +19,17 @@ if(isset($_POST['submit'])){
 	$slogan = $_POST['slogan'];
 	$ip = $_POST['ip'];
 	$port = $_POST['port'];
+	$template = $_POST['tpl'];
 
 	//insert into database with a prepared statement
-			$stmt = $db->prepare('UPDATE settings SET siteTitle=:siteTitle, slogan=:slogan, ip=:ip, port=:port WHERE siteID=:siteID');
+			$stmt = $db->prepare('UPDATE settings SET siteTitle=:siteTitle, slogan=:slogan, ip=:ip, port=:port, template=:template WHERE siteID=:siteID');
 			$stmt->execute(array(
 				':siteTitle' => $title,
 				':slogan' => $slogan,
 				':siteID' => $sid,
 				':ip' => $ip,
-				':port' => $port
+				':port' => $port,
+				':template' => $template
 			));
 			//insert into database with a prepared statement
 					$stmt8 = $db->prepare('UPDATE footer SET title=:title, descr=:descr WHERE id=:id');
@@ -91,7 +93,7 @@ if(isset($_POST['submit2'])){
 }
 
 
-$stmt = $db->prepare('SELECT siteTitle, slogan, ip, port FROM settings WHERE siteID=:siteID');
+$stmt = $db->prepare('SELECT * FROM settings WHERE siteID=:siteID');
 $stmt->execute(array(':siteID' => $sid));
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -149,30 +151,34 @@ $row4 = $stmt4->fetch(PDO::FETCH_ASSOC);
                         <label><?php echo $dbd["port"] ?></label>
                         <input name="port" type="number" class="form-control" placeholder="" value="<?php echo $row["port"]; ?>">
                       </div>
+					  <div class="form-group">
+                        <label><?php echo $l["theme"] ?></label>
+                        <input name="tpl" type="text" class="form-control" placeholder="" value="<?php echo $row["template"]; ?>">
+                      </div>
 					  <?php echo $dbd["footer"]; ?>
 					  <div class="form-group">
                         <label><?php echo $dbd["footer"]; ?> 1</label>
-                        <input name="f1" type="text" class="form-control" placeholder="" value="<?php echo $row2["title"]; ?>">
+                        <input name="f1" type="text" class="form-control" placeholder="" value="<?php echo htmlspecialchars($row2["title"]); ?>">
                       </div>
 					  <div class="form-group">
                         <label><?php echo $dbd["footer"]; ?> 2</label>
-                        <input name="f2" type="text" class="form-control" placeholder="" value="<?php echo $row3["title"]; ?>">
+                        <input name="f2" type="text" class="form-control" placeholder="" value="<?php echo htmlspecialchars($row3["title"]); ?>">
                       </div>
 					  <div class="form-group">
                         <label><?php echo $dbd["footer"]; ?> 3</label>
-                        <input name="f3" type="text" class="form-control" placeholder="" value="<?php echo $row4["title"]; ?>">
+                        <input name="f3" type="text" class="form-control" placeholder="" value="<?php echo htmlspecialchars($row4["title"]); ?>">
                       </div>
 					  <div class="form-group">
                         <label><?php echo $dbd["footer"]; ?> 1 <?php echo $dbd["description"]; ?></label>
-                        <input name="f1d" type="text" class="form-control" placeholder="" value="<?php echo $row2["descr"]; ?>">
+                        <input name="f1d" type="text" class="form-control" placeholder="" value="<?php echo htmlspecialchars($row2["descr"]); ?>">
                       </div>
 					  <div class="form-group">
                         <label><?php echo $dbd["footer"]; ?> 2 <?php echo $dbd["description"]; ?></label>
-                        <input name="f2d" type="text" class="form-control" placeholder="" value="<?php echo $row3["descr"]; ?>">
+                        <input name="f2d" type="text" class="form-control" placeholder="" value="<?php echo htmlspecialchars($row3["descr"]); ?>">
                       </div>
 					  <div class="form-group">
                         <label><?php echo $dbd["footer"]; ?> 3 <?php echo $dbd["description"]; ?></label>
-                        <input name="f3d" type="text" class="form-control" placeholder="" value="<?php echo $row4["descr"]; ?>">
+                        <input name="f3d" type="text" class="form-control" placeholder="" value="<?php echo htmlspecialchars($row4["descr"]); ?>">
                       </div>
 					<p><button name="submit" value="submit" class="btn btn-primary btn-round"><?php echo $actions["submit"] ?></button></p>	
 				 </div>

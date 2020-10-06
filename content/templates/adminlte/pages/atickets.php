@@ -84,13 +84,9 @@
 						echo '<td>'.$row["ticketTitle"].'</td>';
 						echo '<td>'.$row["ticketAdmin"].'</td>';
 						echo '<td class="text-right">'.$status.'</td>';
-						echo '<td class="td-actions text-right">';
+						echo '<td class="td-actions">';
 						echo '<a href="viewticket.php?id='.$row["ticketID"].'">';
-						echo'<a class="btn btn-info btn-sm" href="addticketr.php?id='.$row["ticketID"].'">
-						  <i class="fas fa-pencil-alt">
-						  </i>
-						  '.$actions["add_answer"].'
-					  </a>
+						echo'
 					  <a class="btn btn-danger btn-sm" href="actions.php?id='.$row["ticketID"].'&action=deletet">
 						  <i class="fas fa-trash">
 						  </i>

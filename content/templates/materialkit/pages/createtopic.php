@@ -15,6 +15,12 @@ if(isset($_POST['submit'])){
 	$date = time();
 	$locked = 0;
 	$pinned = 0;
+	if (empty($title)) {
+		return header("Location: createtopic.php?action=fillallfields&id=".$_GET['id']."");
+	}
+	if (empty($descr)) {
+		return header("Location: createtopic.php?action=fillallfields&id=".$_GET['id']."");
+	}
 
 		$idget = insertDB("topics", "name,authorID,forumID,date,locked,pinned,views", "'".$title."', '".$_SESSION["memberID"]."', '".$_GET["id"]."', '".$date."', '".$locked."', '".$pinned."', 0");
 		$idget2 = insertDB("topics_r", "topicID,authorID,descr,time", "'".$idget."', '".$_SESSION["memberID"]."', '".$descr."', '".$date."'");
@@ -39,7 +45,7 @@ if(isset($_POST['submit'])){
 						<h1><?php echo $siteTitle; ?>
 						</h1>
 
-						<h3 class="title">Pridať akcie spoločnosti na predaj</h3>
+						<h3 class="title"><?php echo $mk["forum_create_topic"]; ?></h3>
 					</div>
 				</div>
 			</div>
@@ -53,10 +59,10 @@ if(isset($_POST['submit'])){
 
 	    			  <form method="post">
   <div class="form-group">
-    <label for="exampleInputEmail1">Názov topicu</label>
+    <label for="exampleInputEmail1"><?php echo $l["topic_name"]; ?></label>
     <input type="text" class="form-control" name="title">
   </div>
-  <label for="editor1">Popis</label>
+  <label for="editor1"><?php echo $dbd["description"]; ?></label>
   <textarea name="descr" id="editor1" rows="10" cols="80" class="form-control">
 
             </textarea>
@@ -66,7 +72,7 @@ if(isset($_POST['submit'])){
                 CKEDITOR.replace( 'editor1' );
             </script>
 
-  <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" name="submit" class="btn btn-primary"><?php echo $actions["submit"]; ?></button>
 </form>
 
 		<!--     *********    END FEATURES 1      *********      -->

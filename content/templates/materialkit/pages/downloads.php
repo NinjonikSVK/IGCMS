@@ -54,7 +54,7 @@
 														echo "<th > " . $row["fileTitle"]. "</th>";
 														echo "<th> " . $row["fileCont"]. "</th>";
 														echo "<th> " . $row["fileDL"]. "</th>";
-														echo '<td><a href="download.php?id='.$row["fileID"].'">Stiahnuť</a></td>';
+														echo '<td><a href="download.php?id='.$row["fileID"].'">'.$dbd["download"].'</a></td>';
 														echo "</tr>";
 												}
 											?>

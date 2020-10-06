@@ -5,29 +5,29 @@ include("../layout/header.php");
 $stmt = $db->prepare('UPDATE topics SET views=views + 1 WHERE id=:id');
 $stmt->execute(array(':id' => $_GET["id"]));
 
-					$stmtf = $db->prepare('SELECT * FROM topics WHERE id=:id');
-					$stmtf->execute(array(':id' => $_GET["id"]));
-					$rowf = $stmtf->fetch(PDO::FETCH_ASSOC);
+$stmtf = $db->prepare('SELECT * FROM topics WHERE id=:id');
+$stmtf->execute(array(':id' => $_GET["id"]));
+$rowf = $stmtf->fetch(PDO::FETCH_ASSOC);
 
-					if (!$stmtf->execute()) {
-						print_r($stmtf->errorInfo());
-					}
+if (!$stmtf->execute()) {
+	print_r($stmtf->errorInfo());
+}
 
-					$stmtc = $db->prepare('SELECT * FROM forums WHERE id=:id');
-					$stmtc->execute(array(':id' => $rowf["forumID"]));
-					$rowc = $stmtc->fetch(PDO::FETCH_ASSOC);
+$stmtc = $db->prepare('SELECT * FROM forums WHERE id=:id');
+$stmtc->execute(array(':id' => $rowf["forumID"]));
+$rowc = $stmtc->fetch(PDO::FETCH_ASSOC);
 
-					if (!$stmtc->execute()) {
-						print_r($stmtc->errorInfo());
-					}
+if (!$stmtc->execute()) {
+	print_r($stmtc->errorInfo());
+}
 
-					$stmttt = $db->prepare('SELECT * FROM topics_r WHERE topicID=:id');
-					$stmttt->execute(array(':id' => $_GET["id"]));
-					$rowt = $stmttt->fetch(PDO::FETCH_ASSOC);
+$stmttt = $db->prepare('SELECT * FROM topics_r WHERE topicID=:id');
+$stmttt->execute(array(':id' => $_GET["id"]));
+$rowt = $stmttt->fetch(PDO::FETCH_ASSOC);
 
-					if (!$stmttt->execute()) {
-						print_r($stmttt->errorInfo());
-					}
+if (!$stmttt->execute()) {
+	print_r($stmttt->errorInfo());
+}
 
 if (empty($_GET["id"])){
 	header("Location: forums.php?action=idnotfound");
@@ -91,14 +91,14 @@ if(isset($_POST['submit'])){
 										echo '';
 									} else if ($permis == 1) {
 										if($rowf["locked"] == 0){
-											echo '<a href="actions?action=lock&id='.$_GET["id"].'&type=1"><button type="button" class="btn btn-danger">Uzavrieť</button></a>';
+											echo '<a href="actions?action=lock&id='.$_GET["id"].'&type=1"><button type="button" class="btn btn-danger">'.$actions["close"].'</button></a>';
 										} else {
-											echo '<a href="actions?action=lock&id='.$_GET["id"].'&type=0"><button type="button" class="btn btn-success">Otvoriť</button></a>';
+											echo '<a href="actions?action=lock&id='.$_GET["id"].'&type=0"><button type="button" class="btn btn-success">'.$actions["open"].'</button></a>';
 										}
 										if($rowf["pinned"] == 0){
-											echo '<a href="actions?action=pin&id='.$_GET["id"].'&type=1"><button type="button" class="btn btn-primary">Označiť</button></a>';
+											echo '<a href="actions?action=pin&id='.$_GET["id"].'&type=1"><button type="button" class="btn btn-primary">'.$actions["mark"].'</button></a>';
 										} else {
-											echo '<a href="actions?action=pin&id='.$_GET["id"].'&type=0"><button type="button" class="btn btn-warning">Odznačiť</button></a>';
+											echo '<a href="actions?action=pin&id='.$_GET["id"].'&type=0"><button type="button" class="btn btn-warning">'.$actions["unmark"].'</button></a>';
 										}
 									} else {
 									echo 'Error, group permission error.';
@@ -108,36 +108,36 @@ if(isset($_POST['submit'])){
 			<?php
 			while ($rowt = $stmttt->fetch(PDO::FETCH_ASSOC)) {
 				$stmta = $db->prepare('SELECT email, avatar, username, groupID FROM members WHERE memberID=:memberID');
-														$stmta->execute(array(':memberID' => $rowt["authorID"]));
-														$rowa = $stmta->fetch(PDO::FETCH_ASSOC);
+				$stmta->execute(array(':memberID' => $rowt["authorID"]));
+				$rowa = $stmta->fetch(PDO::FETCH_ASSOC);
 
-														$usergroupIDt = $rowa["groupID"];
+				$usergroupIDt = $rowa["groupID"];
 
-														if($usergroupIDt == 0){
-															$lvl = $l["user"];
-														} else {
-															$stmtgr3 = $db->prepare('SELECT * FROM groups WHERE id=:id');
-															$stmtgr3->execute(array(':id' => $usergroupIDt));
-															$rowgr3 = $stmtgr3->fetch(PDO::FETCH_ASSOC);
+				if($usergroupIDt == 0){
+					$lvl = $l["user"];
+				} else {
+					$stmtgr3 = $db->prepare('SELECT * FROM groups WHERE id=:id');
+					$stmtgr3->execute(array(':id' => $usergroupIDt));
+					$rowgr3 = $stmtgr3->fetch(PDO::FETCH_ASSOC);
 
-															$grrn3 = $rowgr3['title'];
-															$grrc3 = $rowgr3['color'];
-															$lvl3 = '<span style="color:'.$grrc3.'">'.$grrn3.'</span>';
-														}
+					$grrn3 = $rowgr3['title'];
+					$grrc3 = $rowgr3['color'];
+					$lvl3 = '<span style="color:'.$grrc3.'">'.$grrn3.'</span>';
+				}
 
-														if ($rowa['avatar'] == "gravatar") {
+				if ($rowa['avatar'] == "gravatar") {
 
-															$emailr = $rowa['email'];;
-															$default = "".$siteurl."img/default.png";
-															$size = 100;
+					$emailr = $rowa['email'];;
+					$default = "".$siteurl."img/default.png";
+					$size = 100;
 
-															$grav_urlr = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $emails ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
+					$grav_urlr = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $emails ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
 
-														} else {
+				} else {
 
-															$grav_urlr = '../../../uploads/ua/'.$rowa['avatar'].'';
+					$grav_urlr = '../../../uploads/ua/'.$rowa['avatar'].'';
 
-														}
+				}
 
 										$rdate = date("d.m.Y H:i", $rowt["time"]);
 				echo '
@@ -155,7 +155,7 @@ if(isset($_POST['submit'])){
 				</div>
 				<div class="media-footer">
 					<a href="viewtopic?id='.$_GET["id"].'&action=citate&cid='.$rowt["id"].'" class="btn btn-primary btn-simple pull-right" rel="tooltip" title="Citovať tento príspevok">
-						<i class="material-icons">reply</i> Citovať
+						<i class="material-icons">reply</i> '.$l["citate"].'
 					</a>
 				</div>
 			</div>
@@ -178,7 +178,7 @@ if(isset($_POST['submit'])){
 				 $r2mdate = date("d.m.Y H:i", $rowci["time"]);
 
 				 $citate = '
-				 <div style="background:#eeeeee; border:1px solid #cccccc; padding:5px 10px"><em>'.$rowcim["username"].' '.$mk["said on"].'  '.$r2mdate.'</em></div>
+				 <div style="background:#eeeeee; border:1px solid #cccccc; padding:5px 10px"><em>'.$rowcim["username"].' '.$mk["said_on"].'  '.$r2mdate.'</em></div>
 
 				 <div style="background:#eeeeee; border:1px solid #cccccc; padding:5px 10px"><em>'.$rowci["descr"].'</em></div>
 
@@ -187,7 +187,7 @@ if(isset($_POST['submit'])){
 				 $citate = '';
 			 }
 			if($rowf["locked"] == 1){
-				$textarea = '<p>Tento topic je uzamknutý, tým pádom naň nemôžete reagovať.</p>';
+				$textarea = '<p>'.$l["topiclocked"].'</p>';
 			} else {
 				$textarea = '
 				<p>

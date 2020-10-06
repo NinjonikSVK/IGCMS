@@ -125,45 +125,42 @@
         						}
 
         						if ($row["ticketStatus"] == '1'){
-        							$status = '<span class="badge badge-primary">'.$statuses["working_on"].'</span>';
-        						}
-        						else if ($row["ticketStatus"]== '2'){
-        							$status = '<span class="badge badge-success">'.$statuses["opened"].'</span>';
-        						}
-        						else if ($row["ticketStatus"] == '3'){
-        							$status = '<span class="badge badge-danger">'.$statuses["closed"].'</span>';
-        						}
-        						else if ($row["ticketStatus"] == '4'){
-        							$status = '<span class="badge badge-secondary">'.$statuses["stored"].'</span>';
-        						}
-        						else {
-        							$status = '<span class="badge badge-warning">'.$statuses["error"].'</span>';
-        						}
-
+								  $status = '<a href="editticket?id='.$row["id"].'"><button type="button" class="btn btn-block btn-success btn-xs">'.$statuses["opened"].'</button></a>';
+								}
+								else if ($row["ticketStatus"]== '2'){
+								  $status = '<a href="editticket?id='.$row["id"].'"><button type="button" class="btn btn-block btn-default btn-xs">'.$statuses["working_on"].'</button></a>';
+								}
+								else if ($row["ticketStatus"] == '3'){
+								  $status = '<a href="editticket?id='.$row["id"].'"><button type="button" class="btn btn-block btn-danger btn-xs">'.$statuses["closed"].'</button></a>';
+								}
+								else if ($row["ticketStatus"] == '4'){
+								  $status = '<a href="editticket?id='.$row["id"].'"><button type="button" class="btn btn-block btn-warning btn-xs">'.$statuses["stored"].'</button></a>';
+								}
+								else {
+								  $status = '<span class="label label-danger">'.$statuses["error"].'</span>';
+								}
         						echo '
         								<tr>';
         									echo '<td class="text-center">'.$row["ticketID"].'</td>';
-        									echo '<td>'.$date.'</td>';
-        									echo '<td>'.$row["ticketTitle"].'</td>';
-        									echo '<td>'.$row["ticketAdmin"].'</td>';
-        									echo '<td>'.$status.'</td>';
-        									echo '<td class="td-actions text-right">';
-        									echo '<a href="viewticket.php?id='.$row["ticketID"].'">';
-        									echo'<td>
-        								  <a class="btn btn-danger btn-sm" href="actions.php?id='.$row["ticketID"].'&action=deletet">
-        									  <i class="fas fa-trash">
-        									  </i>
-        									  '.$actions["delete"].'
-        								  </a>
-        								  <a class="btn btn-info btn-sm" href="editticket.php?id='.$row["ticketID"].'">
-        									  <i class="fas fa-pencil-alt">
-        									  </i>
-        									  '.$actions["edit"].'
-        								  </a>
-        							  </td>
-        										</a>
-        									</td>
-        								</tr>
+						echo '<td>'.$date.'</td>';
+						echo '<td>'.$row["ticketTitle"].'</td>';
+						echo '<td>'.$row["ticketAdmin"].'</td>';
+						echo '<td class="text-right">'.$status.'</td>';
+						echo '<td class="td-actions">';
+						echo '<a href="viewticket.php?id='.$row["ticketID"].'">';
+						echo'
+					   <a class="btn btn-danger btn-sm" href="actions.php?id='.$row["ticketID"].'&action=deletet">
+						  <i class="fas fa-trash">
+						  </i>
+						  '.$actions["delete"].'
+					  </a>
+					  <a class="btn btn-info btn-sm" href="viewticket.php?id='.$row["ticketID"].'">
+						  <i class="fas fa-pencil-alt">
+						  </i>
+						  '.$actions["show"].'
+					  </a>
+						</td>
+					</tr>
         								</tbody>
         							</table>
         						  </div>
@@ -173,7 +170,7 @@
         <div class="direct-chat-msg">
         <div class="direct-chat-infos clearfix">
         <span class="direct-chat-name float-left">'.$row["ticketAuthor"].'</span>
-        <span class="direct-chat-timestamp float-right">'.$date.' - Predmet</span>
+        <span class="direct-chat-timestamp float-right">'.$date.' - '.$l["subject"].'</span>
         </div>
         <!-- /.direct-chat-infos -->
         <img class="direct-chat-img" src="'.$grav_urlt.'" alt="message user image">

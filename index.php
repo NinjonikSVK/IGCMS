@@ -1,3 +1,6 @@
-<?php
-	header("Location: content/templates/materialkit/pages/install");
-?>
+												
+													<?php
+														header("Location: content/templates/materialkit/pages/install");
+													?>
+													
+												

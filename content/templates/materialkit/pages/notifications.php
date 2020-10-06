@@ -35,14 +35,14 @@
 						<!--     *********     FEATURES 1      *********      -->
 
 <div class="table-responsive">
-			<a href="action.php?id=0&action=delallno">Zmazať všetky notifikácie</a>
+			<a href="action.php?id=0&action=delallno"><?php echo $l["notdel"]; ?></a>
 		                        <table class="table">
 		                            <thead>
 		                                <tr>
 		                                    <th class="text-center">ID</th>
-		                                    <th class="text-primary">Notifikácia</th>
-		                                    <th class="text-primary">Čas</th>
-											<th class="text-primary">Akcie</th>											
+		                                    <th class="text-primary"><?php echo $l["notification"]; ?></th>
+		                                    <th class="text-primary"><?php echo $dbd["time"]; ?></th>
+											<th class="text-primary"><?php echo $actions["actions"]; ?></th>											
 		                                </tr>
 		                            </thead>
 		                            <tbody>
@@ -54,37 +54,37 @@
 													$nType = $row["notType"];
 													
 													if ($nType == '1'){
-														$noType = "Boli ste úspešne prihlásení,";
+														$noType = $l["not1"];
 													}
 													else if ($nType == '2'){
-														$noType = "Úspešne ste sa odhlásili.";
+														$noType = $l["not2"];
 													}
 													else if ($nType == '3'){
-														$noType = "Akcia bola úspešná.";
+														$noType = $l["not3"];
 													}
 													else if ($nType == '4'){
-														$noType = "Akcia nebola úspešná.";
+														$noType = $l["not4"];
 													}
 													else if ($nType == '5'){
-														$noType = "Ticket bol úspešne vytvorený.";
+														$noType = $l["not5"];
 													}
 													else if ($nType == '6'){
-														$noType = "Ticket bol úspešne zmazaný.";
+														$noType = $l["not6"];
 													}
 													else if ($nType == '7'){
-														$noType = "Úspešne ste olajkovali príspevok.";
+														$noType = $l["not7"];
 													}
 													else if ($nType == '8'){
-														$noType = "Úspešne ste odlajkovali príspevok.";
+														$noType = $l["not8"];
 													}
 													else {
-														$noType = "Žiadna notifikácia nebola nájdená.";
+														$noType = $l["not9"];
 													}
 														echo "<tr>";
 														echo "<th class='text-center'> " . $row["notID"]. "</th>";
 														echo "<td> " . $noType. "</td>";
 														echo "<td> " . $date. "</td>";
-														echo '<td><a href="action.php?id='.$row["notID"].'&action=deleteno">Odstrániť</a></td>';
+														echo '<td><a href="action.php?id='.$row["notID"].'&action=deleteno">'.$actions["delete"].'</a></td>';
 														echo "</tr>";
 												}
 											?>

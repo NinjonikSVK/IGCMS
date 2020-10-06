@@ -6,13 +6,13 @@ if (empty($_GET["id"])){
 
 include("../layout/header.php");
 
-					$stmtf = $db->prepare('SELECT * FROM forums WHERE id=:id ORDER BY sortn');
-					$stmtf->execute(array(':id' => $_GET["id"]));
-					$rowf = $stmtf->fetch(PDO::FETCH_ASSOC);
+$stmtf = $db->prepare('SELECT * FROM forums WHERE id=:id ORDER BY sortn');
+$stmtf->execute(array(':id' => $_GET["id"]));
+$rowf = $stmtf->fetch(PDO::FETCH_ASSOC);
 
-					if (!$stmtf->execute()) {
-						print_r($stmtf->errorInfo());
-					}
+if (!$stmtf->execute()) {
+	print_r($stmtf->errorInfo());
+}
 
 ?>
 <body class="index-page">

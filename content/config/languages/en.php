@@ -1,7 +1,23 @@
 <?php
  
 $l = array();
- 
+$l["theme"] = "Theme";
+$l["notdel"] = "Delete all notifications.";
+$l["not1"] = "You were successfully logged in.";
+$l["not2"] = "You were succesfully logged out.";
+$l["not3"] = "Action was successful.";
+$l["not4"] = "Actions was not successful.";
+$l["not5"] = "You have created ticket.";
+$l["not6"] = "You have removed ticket.";
+$l["not7"] = "You have liked the post.";
+$l["not8"] = "You have unliked the post.";
+$l["not9"] = "No notification was found.";
+$l["notification"] = "Notification";
+$l["post"] = "Post";
+$l["subject"] = "Subject";
+$l["citate"] = "Quote";
+$l["topic_name"] = "Topic's name";
+$l["topiclocked"] = 'This topic is locked, that means you cannot reply anymore.';
 $l['login'] = 'Log in';
 $l['register'] = 'Register a new membership';
 $l['registerpage'] = 'Register';
@@ -86,6 +102,7 @@ $stp['Four'] = $stp['stp']." Four";
  
 #dbd = Dashboard
 $dbd = array();
+$dbd["download"] = "Download";
 $dbd["main"] = "Dashboard";
 $dbd["sites"] = "Pages";
 $dbd["create_site"] = "Add page";
@@ -196,6 +213,10 @@ $actions["upload"] = "Upload";
 $actions["save"] = "Save";
 $actions["change"] = "Change";
 $actions["confirm_password"] = "Confirm password";
+$actions["close"] = "Close";
+$actions["open"] = "Open";
+$actions["mark"] = "Mark";
+$actions["unmark"] = "Unmark";
  
 $statuses = array();
 $statuses["opened"] = "Opened";
@@ -242,7 +263,7 @@ Alert: After changing avatar to 'Upload file'<br /> you must upload photo that i
                             Profile photo must have atleast 100 x 100 px and must be in 1:1.
 ";
  $mk["bg_alert"] = "
-							Photo on background must have atleast 2000 x 1339 px.
+							Photo on background must have atleast
 ";
 
 #edt = edit

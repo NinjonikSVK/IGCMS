@@ -13,7 +13,7 @@
 	
 		include("../layout/navbar.php");
 		
-		$stmt = $db->prepare("SELECT newCont, newAuthor, newTitle, newDate, filename, likes FROM news WHERE newID='".$_GET['id']."'");
+		$stmt = $db->prepare("SELECT newCont, newAuthor, newTitle, newDate, filename FROM news WHERE newID='".$_GET['id']."'");
 		$stmt->execute(array());
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 		
@@ -57,7 +57,7 @@
 						<h1><?php echo $nTitle; ?>
 						</h1>
 						
-						<h3 class="title">Novinka</h3>
+						<h3 class="title"><?php echo $l["post"] ?></h3>
 					</div>
 				</div>
 			</div>
@@ -102,7 +102,7 @@
 								</a>
 							</div>
 							<a align="left" href="action.php?action=like&id='.$row['newID'].'" class="btn btn-danger btn-simple pull-right">
-								<i class="material-icons">favorite</i> '.$row['likes'].'
+								<i class="material-icons">favorite</i> '.$row["likes"].'
 							</a>
 						</div>
 					</div>';

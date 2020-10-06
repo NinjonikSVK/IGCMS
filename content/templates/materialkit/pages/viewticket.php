@@ -58,7 +58,7 @@
 						<h1><?php echo $siteTitle; ?>
 						</h1>
 
-						<h3 class="title">Podpora - Tickety</h3>
+						<h3 class="title"><?php echo $mk["support-tickets"] ?></h3>
 					</div>
 				</div>
 			</div>
@@ -73,11 +73,11 @@
 															<thead>
 																<tr>
 																	<th class="text-center">#</th>
-																	<th>Vytvorený</th>
-																	<th>Predmet</th>
-																	<th>Preferovaný administrátor</th>
-																	<th class="text-right">Status</th>
-																	<th class="text-right">Akcie</th>
+																	<th><?php echo $dbd["created"] ?></th>
+																	<th><?php echo $dbd["title"] ?></th>
+																	<th><?php echo $dbd["preferated_administrator"] ?></th>
+																	<th class="text-right"><?php echo $dbd["status"] ?></th>
+																	<th class="text-right"><?php echo $dbd["actions"] ?></th>
 																</tr>
 															</thead>
 															<tbody>
@@ -90,8 +90,6 @@
 														} else {
 															header("Location: index.php");
 														}
-
-															$date = date("d.m.Y H:i", $row["ticketTime"]);
 
 														$stmtt = $db->prepare('SELECT username, email, description, skills, location, memberID, Level, notes, avatar FROM members WHERE username=:username');
 														$stmtt->execute(array(':username' => $row['ticketAuthor']));
@@ -110,19 +108,19 @@
 														$date = date("d.m.Y H:i", $row["ticketTime"]);
 
 														if ($row["ticketStatus"] == '1'){
-															$status = '<span class="label label-default">Rieši sa..</span>';
+															$status = '<span class="label label-success">'.$statuses["opened"].'</span>';
 														}
 														else if ($row["ticketStatus"]== '2'){
-															$status = '<span class="label label-success">Otvorený</span>';
+															$status = '<span class="label label-default">'.$statuses["working_on"].'</span>';
 														}
 														else if ($row["ticketStatus"] == '3'){
-															$status = '<span class="label label-danger">Zatvorený</span>';
+															$status = '<span class="label label-danger">'.$statuses["closed"].'</span>';
 														}
 														else if ($row["ticketStatus"] == '4'){
-															$status = '<span class="label label-rose">Odložený</span>';
+															$status = '<span class="label label-rose">'.$statuses["stored"].'</span>';
 														}
 														else {
-															$status = '<span class="label label-danger">Chyba!</span>';
+															$status = '<span class="label label-danger">'.$statuses["error"].'</span>';
 														}
 
 														echo '
@@ -158,7 +156,7 @@
 		        								<div class="media-body">
 		        										<textarea name="respCont" class="form-control" placeholder="'.$email.'" rows="4"></textarea>
 		        										<div class="media-footer">
-		        											<button name="submit" class="btn btn-primary"><i class="material-icons">reply</i>Odpovedať</button>
+		        											<button name="submit" class="btn btn-primary"><i class="material-icons">reply</i>'.$actions["reply"].'</button>
 		        										</div>
 		        								</div>
 												</form>

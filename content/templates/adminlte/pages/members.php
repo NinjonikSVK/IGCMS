@@ -13,6 +13,10 @@
 	$stmt = $db->prepare('SELECT * FROM members');
 	$stmt->execute(array());
 	$row = $stmt->fetch(PDO::FETCH_ASSOC);
+	
+	if (!$stmt->execute()) {
+		print_r($stmt->errorInfo());
+	}
 
 ?>
 <!-- Content Wrapper. Contains page content -->
