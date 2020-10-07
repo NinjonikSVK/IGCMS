@@ -40,7 +40,7 @@ if(isset($_POST['submit'])){
 	?>
 
   <!-- Content Wrapper. Contains page content -->
-  	<div class="page-header header-filter clear-filter" style="background-image: url('assets/img/bg0.jpg');">
+  	<div class="page-header header-filter clear-filter" style="background-image: url('../../../../assets/img/bg0.jpg');">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">

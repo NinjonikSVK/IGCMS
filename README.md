@@ -1,4 +1,3 @@
-# IGCMS
 IGCMS stands for "Innovation Gaming Content Management System".
 
 Drop all content of the downloaded archive into your website.
@@ -9,3 +8,9 @@ LICENSING
 - You cannot use this CMS in closed-source projects.
 - You cannot upload same version as this CMS on another websites without permission of the author.
 - You also need to include authors of templates.
+
+REQUIREMENTS
+- You'll need your own MySQL (MyIsam or InnoDB) database.
+- PHP 5.6
+- Own webhosting for your domain.
+- Domain

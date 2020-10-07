@@ -44,9 +44,8 @@
 							</div>
 						</div>
 					</footer>
-<!--
 
-</body>-->
+<!--<endora></endora>-->
 </body>
 
 	<script src="../pages/base.js"></script>

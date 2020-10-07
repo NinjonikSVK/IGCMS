@@ -8,7 +8,7 @@ require("content/config/config.php");
 
 	$permis2 = getperm('canmanagesite')["canmanagesite"];
 	if ($permis2 == 0) {
-		header("Location: ../../materialkit/pages/index?type=notenoughpermissions");
+		header("Location: content/templates/materialkit/pages/index?type=notenoughpermissions");
 	} else if ($permis2 == 1) {
 		echo '';
 	} else {
@@ -30,7 +30,7 @@ if ($res === TRUE) {
     $zip->close();
     echo 'ok';
 	unlink("version.zip");
-	header("Location: content/templates/adminlte/pages/index");
+	header("Location: content/templates/adminlte/pages/index?action=updated");
 } else {
     echo 'failed';
 }

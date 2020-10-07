@@ -54,7 +54,7 @@ if (isset($_POST['submit'])) {
 	<?
 		include("../layout/navbar.php");
 	?>
-	<div class="page-header header-filter clear-filter" style="background-image: url('assets/img/bg0.jpg');">
+	<div class="page-header header-filter clear-filter" style="background-image: url('../../../../assets/img/bg0.jpg');">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
@@ -79,7 +79,7 @@ if (isset($_POST['submit'])) {
 							<h4><small><?php echo $mk["background"]; ?></small></h4>
 							<div class="fileinput fileinput-new text-center" data-provides="fileinput">
 								<div class="fileinput-new thumbnail img-raised">
-									<img src="../../../../assets/img/image_placeholder.jpg" alt="...">
+									<img src="../../../..../../../../assets/img/image_placeholder.jpg" alt="...">
 								</div>
 								<div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
 								<div>

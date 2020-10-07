@@ -6,7 +6,7 @@
 ?>
 <main role="main" class="container">
 	<div class="container py-5 text-center">
-		<div class="jumbotron text-white jumbotron-image shadow" style="background-image: url(/assets/img/bg0.jpg">
+		<div class="jumbotron text-white jumbotron-image shadow" style="background-image: url('../../../../assets/img/bg0.jpg');>
 			<h2 class="mb-4">
 				<?php echo $siteTitle; ?>
 			</h2>

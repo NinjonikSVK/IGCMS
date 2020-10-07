@@ -13,7 +13,7 @@ $title = 'Login';
 	<?
 		include("../layout/navbar.php");
 	?>
-	<div class="page-header header-filter" style="background-image: url('../assets/img/bg7.jpg'); background-size: cover; background-position: top center;">
+	<div class="page-header header-filter" style="background-image: url('../../../../assets/img/bg0.jpg'); background-size: cover; background-position: top center;">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">

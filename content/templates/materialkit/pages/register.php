@@ -11,7 +11,7 @@
 	<?
 		include("../layout/navbar.php");
 	?>
-	<div class="page-header header-filter" filter-color="purple" style="background-image: url('../assets/img/bg7.jpg'); background-size: cover; background-position: top center;">
+	<div class="page-header header-filter" filter-color="purple" style="background-image: url('../../../../assets/img/bg0.jpg'); background-size: cover; background-position: top center;">
     	<div class="container">
 			<div class="row">
     			<div class="col-md-10 col-md-offset-1">
