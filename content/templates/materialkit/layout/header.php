@@ -12,8 +12,8 @@
 	<meta charset="utf-8" />
 	<script src="../ckeditor/ckeditor.js"></script>
 	<script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
-	<link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="../../../../assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" href="../../../../assets/img/favicon.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<title><?php echo $siteTitle; ?> | <?php echo $file_name; ?></title>
@@ -22,19 +22,19 @@
 	
 	<!-- Dizajn pre fórum -->
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href="/assets/forum.css" rel="stylesheet">
+	<link href="../../../../assets/forum.css" rel="stylesheet">
 	
 	<!--     Fonts and icons     -->
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
 
 	<!-- CSS Files -->
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/assets/css/material-kit.css?v=1.2.1" rel="stylesheet"/>
+    <link href="../../../../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../../assets/css/material-kit.css?v=1.2.1" rel="stylesheet"/>
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link href="/assets/assets-for-demo/vertical-nav.css" rel="stylesheet" />
-	<link href="/assets/assets-for-demo/demo.css" rel="stylesheet" />
+	<link href="../../../../assets/assets-for-demo/vertical-nav.css" rel="stylesheet" />
+	<link href="../../../../assets/assets-for-demo/demo.css" rel="stylesheet" />
 
 	<!--[if !mso]><!-->
 	<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css"/>

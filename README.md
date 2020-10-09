@@ -1,3 +1,4 @@
+# IGCMS
 IGCMS stands for "Innovation Gaming Content Management System".
 
 Drop all content of the downloaded archive into your website.
@@ -14,3 +15,4 @@ Then simply run your website in internet browser.
 - PHP 5.6
 - Own webhosting for your domain.
 - Domain
+
