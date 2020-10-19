@@ -16,3 +16,5 @@ Then simply run your website in internet browser.
 - Own webhosting for your domain.
 - Domain
 
+## CREDITS
+- [Nanoslav](https://github.com/Nanoslav) - Czech translation
