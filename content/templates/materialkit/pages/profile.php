@@ -3,7 +3,7 @@
 ?>
 <body class="profile-page">
 	<nav class="navbar navbar-default navbar-transparent navbar-fixed-top navbar-color-on-scroll" color-on-scroll=" " id="sectionsNav">
-	<?
+	<?php
 		include("../layout/navbar.php");
 
 		$id = $_GET['id'];
@@ -63,13 +63,13 @@
 								?>
 								</h6>
 								<div class="description text-center">
-									<p> <? echo $row['description']; ?></p>
+									<p> <?php echo $row['description']; ?></p>
 								</div>
 								<div class="description text-center">
-									<p> <? echo $row['location']; ?></p>
+									<p> <?php echo $row['location']; ?></p>
 								</div>
 								<div class="description text-center">
-									<p> <? echo $row['skills']; ?></p>
+									<p> <?php echo $row['skills']; ?></p>
 								</div>
 								<?php
 

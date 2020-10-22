@@ -3,7 +3,7 @@
 ?>
 <body class="index-page">	
 	<nav class="navbar navbar-default navbar-transparent navbar-fixed-top navbar-color-on-scroll" color-on-scroll=" " id="sectionsNav">
-	<?
+	<?php
 	
 		if(!isset($_GET['id']) || $_GET['id'] == ''){ //if no id is passed to this page take user back to previous page
 			header('Location: index.php'); 

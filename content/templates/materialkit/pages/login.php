@@ -10,7 +10,7 @@ $title = 'Login';
 ?>
 <body class="login-page">
 	<nav class="navbar navbar-primary navbar-transparent navbar-absolute">
-	<?
+	<?php
 		include("../layout/navbar.php");
 	?>
 	<div class="page-header header-filter" style="background-image: url('../../../../assets/img/bg0.jpg'); background-size: cover; background-position: top center;">

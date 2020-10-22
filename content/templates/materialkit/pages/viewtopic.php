@@ -49,7 +49,7 @@ if(isset($_POST['submit'])){
 ?>
 <body class="index-page">
 	<nav class="navbar navbar-default navbar-transparent navbar-fixed-top navbar-color-on-scroll" color-on-scroll=" " id="sectionsNav">
-	<?
+	<?php
 		include("../layout/navbar.php");
 	?>
 

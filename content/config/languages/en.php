@@ -1,6 +1,7 @@
 <?php
  
 $l = array();
+$l["backtoweb"] = "Back to web";
 $l["theme"] = "Theme";
 $l["notdel"] = "Delete all notifications.";
 $l["not1"] = "You were successfully logged in.";

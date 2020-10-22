@@ -5,13 +5,21 @@
 	$stmt->execute(array());
 	$site = $stmt->fetch(PDO::FETCH_ASSOC);
 
+	$sid = 1;
+
+	$stmt = $db->prepare("SELECT template FROM settings WHERE siteID=:siteID");
+	$stmt->execute(array(":siteID" => $sid));
+	$row = $stmt->fetch(PDO::FETCH_ASSOC);
+	
+	$tpl = $row["template"];
+
 	$siteTitle = $site['siteTitle'];
 
 	if(!$user->is_logged_in()){ header('Location: login.php'); exit(); }
 
 	$permis2 = getperm('canviewdashboard')["canviewdashboard"];
 	if ($permis2 == 0) {
-		header("Location: ../../materialkit/pages/index?type=notenoughpermissions");
+		header("Location: ../../".$tpl."/pages/index?type=notenoughpermissions");
 	} else if ($permis2 == 1) {
 		echo '';
 	} else {
@@ -111,10 +119,10 @@
             </a>
           </li>
 		  <li class="nav-item">
-            <a href="logout.php" class="nav-link">
+            <a href="../../<?php echo $tpl; ?>/pages/index" class="nav-link">
               <i class="nav-icon fas fa-sign-out-alt"></i>
               <p>
- 			  	<?php echo $l["log_out"]; ?>
+ 			  	<?php echo $l["backtoweb"]; ?>
               </p>
             </a>
           </li>

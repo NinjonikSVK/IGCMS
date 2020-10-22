@@ -4,7 +4,7 @@
 ?>
 <body class="index-page">
 	<nav class="navbar navbar-default navbar-transparent navbar-fixed-top navbar-color-on-scroll" color-on-scroll=" " id="sectionsNav">
-	<?
+	<?php
 		include("../layout/navbar.php");
 	?>
 	<div class="page-header header-filter clear-filter" style="background-image: url('../../../../assets/img/bg0.jpg');">

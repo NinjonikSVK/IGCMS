@@ -1,4 +1,9 @@
 # IGCMS
+
+![GitHub repo size](https://img.shields.io/github/repo-size/NinjonikSVK/IGCMS)
+![GitHub contributors](https://img.shields.io/github/contributors/NinjonikSVK/IGCMS)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/NinjonikSVK/IGCMS/master)
+
 IGCMS stands for "Innovation Gaming Content Management System".
 
 Drop all content of the downloaded archive into your website.
@@ -16,5 +21,13 @@ Then simply run your website in internet browser.
 - Own webhosting for your domain.
 - Domain
 
+## INSTALLATION
+- Extract IG-CMS .zip file.
+- Drop everything from extracted folder to your webserver.
+- Run website in your browser.
+- Proceed with installation.
+- Enjoy using IG CMS!
+
 ## CREDITS
-- [Nanoslav](https://github.com/Nanoslav) - Czech translation
+- [DragonMan11111](https://github.com/DragonMan11111) - Help with some PHP scripts, localization system
+- [Nanoslav](https://github.com/Nanoslav) - Czech translation, API

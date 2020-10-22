@@ -113,17 +113,17 @@
 		<ul class="dropdown-menu dropdown-with-icons">
 			<li>
 				<a href="index?lang=sk">
-					<img src="/img/sk.png">
+					<img src="/img/sk.png" width="150" height="100">
 				</a>
 			</li>
 			<li>
 				<a href="index?lang=cs">
-					<img src="/img/cz.png">
+					<img src="/img/cz.png" width="150" height="100">
 				</a>
 			</li>
 			<li>
 				<a href="index?lang=en">
-					<img src="/img/en.png">
+					<img src="/img/en.png" width="150" height="100">
 				</a>
 			</li>
 			<!--

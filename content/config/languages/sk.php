@@ -1,6 +1,7 @@
 <?php
 
 $l = array();
+$l["backtoweb"] = "Späť na stránku";
 $l["theme"] = "Štýl";
 $l["notdel"] = "Zmazať všetky notifikácie.";
 $l["not1"] = "Boli ste úspešne prihlásení.";

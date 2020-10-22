@@ -1,0 +1,4 @@
+ErrorDocument 404 http://igportals.eu/content/templates/materialkit/pages/404.php
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
