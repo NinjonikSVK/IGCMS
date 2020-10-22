@@ -2,6 +2,8 @@
 ob_start();
 session_start();
 
+error_reporting(0);
+
 //set timezone
 date_default_timezone_set('Europe/London');
 

@@ -1,5 +1,7 @@
 <?php
 
+	error_reporting(0);
+
 	if(!empty($_GET["step"])){
 		$step = $_GET["step"];
 	}
