@@ -1,5 +1,9 @@
-[![GitHub version](https://badge.fury.io/gh/NinjonikSVK%2FIGCMS.png)](https://badge.fury.io/gh/NinjonikSVK%2FIGCMS)
 # IGCMS
+
+![GitHub repo size](https://img.shields.io/github/repo-size/NinjonikSVK/IGCMS)
+![GitHub contributors](https://img.shields.io/github/contributors/NinjonikSVK/IGCMS)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/NinjonikSVK/IGCMS/master)
+
 IGCMS stands for "Innovation Gaming Content Management System".
 
 Drop all content of the downloaded archive into your website.
