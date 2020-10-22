@@ -1,6 +1,5 @@
-# IGCMS
 [![GitHub version](https://badge.fury.io/gh/NinjonikSVK%2FIGCMS.png)](https://badge.fury.io/gh/NinjonikSVK%2FIGCMS)
-#
+# IGCMS
 IGCMS stands for "Innovation Gaming Content Management System".
 
 Drop all content of the downloaded archive into your website.
