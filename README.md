@@ -12,7 +12,7 @@ Then simply run your website in internet browser.
 
 ## REQUIREMENTS
 - You'll need your own MySQL (MyIsam or InnoDB) database.
-- PHP 5.6
+- PHP 5.6, 7.3 or 7.4
 - Own webhosting for your domain.
 - Domain
 
