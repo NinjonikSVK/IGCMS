@@ -15,6 +15,20 @@ Then simply run your website in internet browser.
 - You cannot upload same version as this CMS on another websites without permission of the author.
 - You also need to include authors of templates.
 
+## FEATURES
+- Login / Register system
+- Theme (Template) system
+- Forum system
+- Ticket system
+- User's profile system
+- Group system
+- Page system
+- News (Posts) system
+- Minecraft server status system
+- Page system
+- Edit site's settings (footer etc.) system
+- Easy install wizard
+
 ## REQUIREMENTS
 - You'll need your own MySQL (MyIsam or InnoDB) database.
 - PHP 5.6, 7.3 or 7.4
