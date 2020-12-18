@@ -41,7 +41,3 @@ Then simply run your website in internet browser.
 - Run website in your browser.
 - Proceed with installation.
 - Enjoy using IG CMS!
-
-## CREDITS
-- [DragonMan11111](https://github.com/DragonMan11111) - Help with some PHP scripts, localization system
-- [Nanoslav](https://github.com/Nanoslav) - Czech translation, API
